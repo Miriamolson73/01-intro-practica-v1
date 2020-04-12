@@ -9,7 +9,7 @@ public class Ejercicio1Test {
     @Test
     public void testOrdenar() {
         Ejercicio1 uno =new Ejercicio1();
-        uno.ordenar();
+        uno.ejecutar();
 
     }
 }
