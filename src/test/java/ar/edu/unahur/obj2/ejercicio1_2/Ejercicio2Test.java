@@ -1,9 +1,6 @@
-package ar.edu.unahur.obj2.ejercicio2;
+package ar.edu.unahur.obj2.ejercicio1_2;
 
-import ar.edu.unahur.obj2.ejercicio1.Ejercicio2;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 public class Ejercicio2Test {
 

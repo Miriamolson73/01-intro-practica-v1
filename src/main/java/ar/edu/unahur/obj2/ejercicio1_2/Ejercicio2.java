@@ -1,6 +1,4 @@
-package ar.edu.unahur.obj2.ejercicio1;
-
-import javax.swing.*;
+package ar.edu.unahur.obj2.ejercicio1_2;
 
 import static javax.swing.JOptionPane.*;
 
@@ -30,9 +28,12 @@ public class Ejercicio2 {
         return respuesta;
     }
     public void imprimir(int [] solucion){
+
+        System.out.print( " LOS NUMEROS MAYORES SON  : ");
+
         for (int i=0; i<solucion.length; i++) {
             if (solucion[i] != 0) {
-                System.out.println(solucion[i]);
+                System.out.print( " , "+solucion[i]);
             }
         }
     }
