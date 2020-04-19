@@ -27,7 +27,7 @@ public class Ejercicio1_4 {
         while (! letra.equals("FIN")) {
             contador = 0;
             for (int i = 0; i <nombres.length; i++) {
-                 if (nombres[i].contains(letra)) {
+                 if (nombres[i].startsWith(letra)) {
                     System.out.println("CONTIENE " + letra + " " + nombres[i]);
                     contador++;
                   }
