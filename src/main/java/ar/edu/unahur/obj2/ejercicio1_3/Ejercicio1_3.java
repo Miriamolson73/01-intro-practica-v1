@@ -4,7 +4,7 @@ import static javax.swing.JOptionPane.*;
 
 public class Ejercicio1_3 {
     float sumaTemperatura=0;
-    float promedio=this.getSumaTemperatura()/24;
+    float promedio=0;
     float valorMaximo=0.0f;
     float valorMinimo=100.0f;
 
@@ -24,11 +24,12 @@ public class Ejercicio1_3 {
         for (int i = 0; i <= 23; i++) {
 
             temperatura[i] = Float.parseFloat(showInputDialog("INGRESE LA TEMPERATURA A LA HORA: " + i));
-            this.setSumaTemperatura(temperatura[i]);
-            this.setValorMaximo(this.maximo(temperatura[i],this.getValorMaximo()));
-            this.setValorMinimo(this.minimo(temperatura[i],this.getValorMinimo()));
+            sumaTemperatura+=temperatura[i];
+            valorMaximo=this.maximo(temperatura[i],this.getValorMaximo());
+            valorMaximo=this.minimo(temperatura[i],this.getValorMinimo());
+
         }
-       // promedio=sumaTemperatura/24;
+        promedio=sumaTemperatura/24;
         return temperatura;
     }
     //calcula la cantidad de estrellas y las imprime, recibe la temperatura
@@ -43,10 +44,7 @@ public class Ejercicio1_3 {
      //obtiene el maximo
      public Float maximo(float numero1, float numero2){
         float maximo;
-        if (numero1==numero2){
-            maximo=numero1;
-        }
-        else if (numero1>numero2){
+        if (numero1>=numero2){
             maximo=numero1;
         }
         else{
@@ -57,37 +55,33 @@ public class Ejercicio1_3 {
     //obtiene el minimo recibe temperatura
     public Float minimo(float numero1,float numero2){
         float minimo;
-        if (numero1==numero2){
+        if (numero1<=numero2){
             minimo=numero1;
-        }
-        else if (numero1>numero2){
-            minimo=numero2;
         }
         else{
-            minimo=numero1;
+            minimo=numero2;
         }
         return minimo;
     }
     ///Visualiza la información en forma de gráfico de barras. Por ejemplo:///
-    public void impresion(float temperatura[], float valorMinimo,float valorMaximo){
-        float [] temp=new float[temperatura.length];
-        temp=temperatura;
+    public void impresion(float temp[]){
+
         for (int i=0;i<=23;i++) {
             System.out.print(i+"  ");
             this.estrella(temp[i]);
             if (temp[i] == valorMaximo) {
-                System.out.println(temp[i] + "  -->  MAX");
+                System.out.println(" "+temp[i] + "  -->  MAX");
             } else if (temp[i] == valorMinimo) {
-                System.out.println(temp[i] + "  -->  MIN");
+                System.out.println(" "+temp[i] + "  -->  MIN");
             } else {
-                System.out.println(temp[i]);
+                System.out.println(" "+temp[i]);
             }
         }
+        System.out.println("Media: "+promedio);
 
     }
     public void ejecutar(){
-        //this.ingreso();
-        this.impresion(this.ingreso(),getValorMinimo(),getValorMaximo());
+          this.impresion(this.ingreso());
     }
 
     public float getSumaTemperatura() {
