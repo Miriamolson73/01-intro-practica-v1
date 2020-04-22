@@ -19,7 +19,7 @@ public class Ejercicio1_5 {
         Ejercicio1_5 p=new Ejercicio1_5();
         p.visualizarRecuento(p.contarLetras());
     }
-    public List contarLetras() {
+    public List <String> contarLetras() {
         List<String> coincidecias=new ArrayList<>();
         int cantidad;
         int mayuscula=65;
@@ -47,7 +47,7 @@ public class Ejercicio1_5 {
         return coincidecias;
     }
 
-    public void visualizarRecuento(List lista){
+    public void visualizarRecuento(List<String> lista){
 
         System.out.println(lista);
     }
