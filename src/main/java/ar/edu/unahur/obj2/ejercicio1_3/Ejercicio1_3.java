@@ -7,13 +7,18 @@ public class Ejercicio1_3 {
     float promedio=0;
     float valorMaximo=0.0f;
     float valorMinimo=100.0f;
+    public static void main(String[] args){
+        Ejercicio1_3 prac=new Ejercicio1_3();
+        prac.impresion(prac.ingreso());
+    }
 
+    public void ejecutar() {
+
+        this.impresion(this.ingreso());
+    }
 
 
     ///Usando los datos contenidos en el array, calcula la temperatura media, la máxima y la mínima.
-
-
-
     // Pide al usuario las temperaturas de un día (un valor cada hora durante 24 horas) y almacénalas en un array.
     public float[] ingreso() {
         float[] temperatura = new  float[24];
@@ -25,8 +30,8 @@ public class Ejercicio1_3 {
 
             temperatura[i] = Float.parseFloat(showInputDialog("INGRESE LA TEMPERATURA A LA HORA: " + i));
             sumaTemperatura+=temperatura[i];
-            valorMaximo=this.maximo(temperatura[i],this.getValorMaximo());
-            valorMaximo=this.minimo(temperatura[i],this.getValorMinimo());
+            valorMaximo=this.maximo(temperatura[i],valorMaximo);
+            valorMinimo=this.minimo(temperatura[i],valorMinimo);
 
         }
         promedio=sumaTemperatura/24;
@@ -43,28 +48,24 @@ public class Ejercicio1_3 {
      }
      //obtiene el maximo
      public Float maximo(float numero1, float numero2){
-        float maximo;
-        if (numero1>=numero2){
+        float maximo=numero2;
+        if (numero1>maximo){
             maximo=numero1;
         }
-        else{
-            maximo=numero2;
-        }
-        return maximo;
+
+         return maximo;
     }
     //obtiene el minimo recibe temperatura
     public Float minimo(float numero1,float numero2){
-        float minimo;
-        if (numero1<=numero2){
+        float minimo=numero2;
+        if (numero1<numero2){
             minimo=numero1;
         }
-        else{
-            minimo=numero2;
-        }
+
         return minimo;
     }
     ///Visualiza la información en forma de gráfico de barras. Por ejemplo:///
-    public void impresion(float temp[]){
+    public void impresion(float[] temp){
 
         for (int i=0;i<=23;i++) {
             System.out.print(i+"  ");
@@ -80,9 +81,7 @@ public class Ejercicio1_3 {
         System.out.println("Media: "+promedio);
 
     }
-    public void ejecutar(){
-          this.impresion(this.ingreso());
-    }
+
 
     public float getSumaTemperatura() {
         return sumaTemperatura;
@@ -92,29 +91,10 @@ public class Ejercicio1_3 {
         this.sumaTemperatura = this.sumaTemperatura +sumaTemperatura;
     }
 
-    public float getPromedio() {
-        return promedio;
-    }
 
-    public void setPromedio(float promedio) {
-        this.promedio = promedio;
-    }
 
-    public float getValorMaximo() {
-        return valorMaximo;
-    }
 
-    public void setValorMaximo(float valorMaximo) {
-        this.valorMaximo = valorMaximo;
-    }
 
-    public float getValorMinimo() {
-        return valorMinimo;
-    }
-
-    public void setValorMinimo(float valorMinimo) {
-        this.valorMinimo = valorMinimo;
-    }
 }
 
 

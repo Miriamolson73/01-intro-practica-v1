@@ -15,6 +15,10 @@ public class Ejercicio1_5 {
     Después se mostrará el resultado en pantalla mediante la función visualizarRecuento().
 
     Nota: Recordad que para acceder a los caracteres individuales de un String disponemos del método .charAt().*/
+    public static void main(String[]args){
+        Ejercicio1_5 p=new Ejercicio1_5();
+        p.visualizarRecuento(p.contarLetras());
+    }
     public List contarLetras() {
         List<String> coincidecias=new ArrayList<>();
         int cantidad;
@@ -33,7 +37,7 @@ public class Ejercicio1_5 {
                     letra= String.valueOf(nombre.charAt(i));
                 }
             }
-             if (cantidad != 0) {
+             if (cantidad > 0) {
                    coincidecias.add(letra + " = " + cantidad+"");
               }
             minuscula += 1;
@@ -44,6 +48,7 @@ public class Ejercicio1_5 {
     }
 
     public void visualizarRecuento(List lista){
+
         System.out.println(lista);
     }
 

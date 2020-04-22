@@ -7,8 +7,9 @@ public class Ejercicio2Test {
     @Test
     public void testEjecutar() {
         Ejercicio2 dos = new Ejercicio2();
-       // dos.buscar({10;9;8});
-        dos.ejecutar();
-       // dos.imprimir(dos.ingreso());
+        int[] eje={10,9,8};
+        dos.buscar(eje);
+     //   dos.ejecutar();
+        dos.imprimir(dos.ingreso());
     }
 }

@@ -9,9 +9,8 @@ public class Ejercicio2 {
 
         showMessageDialog(null,"INGRESE UNA LISTA CON 10 NUMEROS");
         for (int i = 0; i <= 9; i++) {
-            lista[i] = Integer.parseInt(showInputDialog("DIGITE EL " + aux + " DE LA LISTA:  "));
-            aux+=1;
-        }
+            lista[i] = Integer.parseInt(showInputDialog("DIGITE EL " +(i+1) + " DE LA LISTA:  "));
+            }
         return lista;
     }
     public int[] buscar(int [] laLista){
@@ -32,13 +31,14 @@ public class Ejercicio2 {
         System.out.print( " LOS NUMEROS MAYORES SON  : ");
 
         for (int i=0; i<solucion.length; i++) {
-            if (solucion[i] != 0) {
+            if (solucion[i] > 0) {
                 System.out.print( " , "+solucion[i]);
             }
         }
     }
-    public void ejecutar(){
-        this.imprimir(this.buscar(this.ingreso()));
+    public static void main(String[]args){
+        Ejercicio2 p=new Ejercicio2();
+        p.imprimir(p.buscar(p.ingreso()));
 
 
     }
